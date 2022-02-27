@@ -1,0 +1,39 @@
+<p>about works!</p>
+
+<!-- names.map((item) => {}) -->
+<ul>
+    <li *ngFor="let item of names">
+        {{item.name}} {{item.surname | lowercase}}
+    </li>
+</ul>
+
+<p>{{545454 | number}}</p>
+
+<!-- pipe htmlde yazdığımız verileri farklı formatlarda ekranda göstermek için kullanılan yapılar. -->
+<!-- angularda number, uppercase, lowercase, date gibi pipelar hazır gelir -->
+<!-- kendi pipelarımızı da angularda oluşturabiliriz. ReactJS pipe yok. -->
+
+<p>{{ today | date:'dd-MM-yy hh:mm:s' }}</p>
+<p>{{ today | date:'dd MMMM yyyy hh:mm:s' }}</p>
+
+<select (change)="changeCity($event)">
+    <option *ngFor="let item of ['izmir','ankara','istanbul']">
+        {{item}}
+    </option>
+</select>
+<!-- switch case yapısını angularda kullanabiliriz. Birden fazla koşul olduğu durumlarda tercih ederiz. -->
+
+seçilen : {{selectedCity}}
+<div [ngSwitch]="selectedCity">
+    <p *ngSwitchCase="'izmir'">
+        Egenin incisi
+    </p>
+    <p *ngSwitchCase="'istanbul'">
+        Türkiyenin kalbi
+    </p>
+    <p *ngSwitchCase="'ankara'">
+        Türkiyenin başkenti
+    </p>
+</div>
+
+<!--  -->

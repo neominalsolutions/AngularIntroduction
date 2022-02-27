@@ -1,0 +1,33 @@
+<h1>{{title}}</h1>
+
+<!-- ReactJsde değişken değerlerini ekrana basarken {degişkenAdi} yapıyoruz. Angularda ise {{degiskenAdi}} seklinde ekrana basıyoruz -->
+
+<p>{{content}}</p>
+
+<!-- butona tıklayınca typescript dosyasında clickMe çalıştıracağız -->
+<button (click)="clickMe()">Click Me</button>
+
+<!-- <button onClick="()=> {alert()}">Click Me2</button> -->
+
+<!-- reactJs de onClick={functionİsmi} şeklinde event tanımlarken angular event isimleri (event)="functionIsmi" şeklinde tanımlanır. -->
+<!-- element içerisindeki değeri $event ile taşırız. özel bir isimdir. js event aynısı  -->
+<input type="text" [value]="title" (input)="changeTitle($event)" />
+
+<!-- 1. yöntem if ile else template olarak ayırmak -->
+<!-- 8 den büyük ise ifTemplate göster küçük ise elseTemplate göster -->
+<p *ngIf="title.length > 8 then ifTemplate else elseTemplate"></p>
+<!-- ifTemplate ile elseTemplate aynı sayfada 1 adet bulunmalıdır yani id gibi çalışır -->
+<ng-template #ifTemplate>
+    8 karakteri aştınız
+</ng-template>
+
+<ng-template #elseTemplate>
+    8 karakterden küçük
+</ng-template>
+
+<p *ngIf="title.length > 8"> 8 den büyük</p>
+<p *ngIf="title.length >= 1 && title.length < 8">8 den küçük</p>
+
+<!-- angualarda *ngIf directive ile html sayfa üzerinde berlili bir duruma göre göster ve gizle işlemleri yapabiliriz.-->
+<!-- [value] ile inputata title değerini atadık -->
+<!-- (input) javascripteki onkeyPress eventine denk gelir. ReactJs deki onChange eventine denk gelir. inputtaki her bir değişimde tetiklenir. input bişe yazınca title güncelle dedik. -->
