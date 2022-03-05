@@ -10,6 +10,10 @@ export class ButtonComponent implements OnInit {
   @Input() title:string = 'button1';
   @Input() bgColor:string = 'red';
   @Input() color:string = 'white';
+  @Input() styles:any = {
+    'color':'white',
+    'background-color':'red'
+  }
 
 
   constructor() { }
