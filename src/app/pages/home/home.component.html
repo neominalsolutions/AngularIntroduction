@@ -7,14 +7,25 @@
 <!-- butona tıklayınca typescript dosyasında clickMe çalıştıracağız -->
 <button (click)="clickMe()">Click Me</button>
 
+<!-- <button onClick={() => clickMe()}>Click Me</button> -->
+
 <!-- <button onClick="()=> {alert()}">Click Me2</button> -->
 
 <!-- reactJs de onClick={functionİsmi} şeklinde event tanımlarken angular event isimleri (event)="functionIsmi" şeklinde tanımlanır. -->
 <!-- element içerisindeki değeri $event ile taşırız. özel bir isimdir. js event aynısı  -->
+<!-- Reactjs de formsubmit olduğunda $event yerine event göndermiştik. -->
 <input type="text" [value]="title" (input)="changeTitle($event)" />
+<!-- [] olanlar angular input diye geçerken reactjs de ise props diye geçer -->
+<!-- () bu parantez içerisindekiler angularda output diye geçer reactjs de ise yine props karşılık gelir. -->
+<!-- angularda bir componente 2 farklı değer tanımlanabilir. birisi input componente başlangıç değeri vermek için [firstname]="'ali'" diğeri ise componentde bir şeyt gerçekleştiğinde çalışır. Componenten değer fırlatır (userNameChanged)="event" biz buna output diyoruz. -->
+<!-- <input type="text" value={title} onChange={() => changeTitle(event)} /> -->
 
 <!-- 1. yöntem if ile else template olarak ayırmak -->
 <!-- 8 den büyük ise ifTemplate göster küçük ise elseTemplate göster -->
+<!-- title && <>Title var</> -->
+<!-- !title && <>Title yok</>  -->
+<!-- title != null ? <>Var</>:<>Yok</> -->
+
 <p *ngIf="title.length > 8 then ifTemplate else elseTemplate"></p>
 <!-- ifTemplate ile elseTemplate aynı sayfada 1 adet bulunmalıdır yani id gibi çalışır -->
 <ng-template #ifTemplate>

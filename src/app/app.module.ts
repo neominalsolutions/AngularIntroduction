@@ -3,14 +3,18 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
+import { UserComponent } from './components/user/user.component';
+import { AboutComponent } from './pages/about/about.component';
+import { HomeComponent } from './pages/home/home.component';
+
+import { UsersComponent } from './pages/users/users.component';
 
 // https://www.tutorialspoint.com/typescript/index.htm
 
+// declaration
 @NgModule({
   declarations: [ // yeni açılan bütün componentler burada app module tanıtılır.
-    AppComponent, AboutComponent, HomeComponent
+    AppComponent, AboutComponent, HomeComponent, UserComponent, UsersComponent
   ],
   imports: [ // dışarıdan yüklenen paketlerin uygulama tanıtıldığı kısım. npm den paket yüklediğimizde modül olarak import etmek zorundayız.
     BrowserModule, // uygulamanın tarayıca çalışması için zorunlu modül.

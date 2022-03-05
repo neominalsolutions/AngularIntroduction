@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'ba-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
@@ -10,6 +9,8 @@ export class HomeComponent implements OnInit {
   // title ve content değişkenlerimiz ReactJs deki useState değişkenlerimize benzer. yanlız angularda changeDetection özelliği sayesinde bu değişkenlerdeki değişim için bir local state mekanizması çalıştırmanıza gerek kalmaz.
   title:string = 'Başlık';
   content:string = 'İçerik';
+
+
 
   constructor() { }
 
@@ -32,6 +33,7 @@ export class HomeComponent implements OnInit {
   }
 
   changeTitle(event:any) {
+    console.log('event', event);
     this.title = event.target.value;
     // title güncelledik.
   }

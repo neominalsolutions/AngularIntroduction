@@ -6,8 +6,15 @@
 <!-- routerLinkleri ise / ile kullanıyoruz -->
 <a routerLink="/home">Anasayfa</a>
 <a routerLink="/about">Hakkımızda</a>
+<a routerLink="/users">Kullanıcılar</a>
+
+<!-- dış link başka sitelere gitmemizi sağlayan bir link yapısı default html link. Angular sayfaları için bunu kullanmayalım. yoksa sayfa yeniden yüklenir. -->
+<a href="https://www.google.com">Google Git</a>
 
 <!-- routerLink angular uygulamalarında sayfalar arası link özelliği gösterir -->
 <!-- reactjs deki Link componentine benzer -->
+<!-- reactjs deki outlet benzer. sayfalar arasında geçiş için dinamik sayfaların yüklenemsi sağlar -->
+
+
 
 <router-outlet></router-outlet>
